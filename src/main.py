@@ -2,6 +2,10 @@ from helper import parameter_parser
 from walklets import WalkletMachine
 
 def main(args):
+    """
+    Walklet machine calling wrapper
+    :param args: Arguments object parsed up.
+    """
     walker = WalkletMachine(args)
 
 if __name__ == "__main__":

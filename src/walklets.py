@@ -3,19 +3,23 @@ import glob
 import random
 import numpy as np
 import pandas as pd
+from tqdm import tqdm
 from gensim.models.word2vec import Word2Vec
 from joblib import Parallel, delayed
-from tqdm import tqdm
 from helper import walk_transformer, create_graph
 
 class WalkletMachine:
     """
+    Walklet multi-scale graph factorization machine class.
+    The graph is being parsed up, random walks are initiated, embeddings are fitted, concatenated and the multi-scale embedding is dumped to disk.
     """
     def __init__(self, args):
         """
+        Walklet machine constructor.
+        :param args: Arguments object with the model hyperparameters. 
         """
         self.args = args
-        self.g = create_graph(self.args.input)
+        self.graph = create_graph(self.args.input)
         self.walks = []
         self.do_walks()
         self.create_embedding()
@@ -23,10 +27,13 @@ class WalkletMachine:
 
     def do_walk(self, node):
         """
+        Doing a single truncated random walk from a source node.
+        :param node: Source node of the truncated random walk.
+        :return walk: A single random walk.
         """
         walk = [node]
         for step in range(self.args.walk_length-1):
-            nebs = [node for node in self.g.neighbors(walk[-1])]
+            nebs = [node for node in self.graph.neighbors(walk[-1])]
             if len(nebs)>0:
                 walk = walk + random.sample(nebs,1) 
         walk = map(lambda x: str(x), walk)
@@ -34,33 +41,42 @@ class WalkletMachine:
 
     def do_walks(self):
         """
+        Doing a fixed number of truncated random walk from every node in the graph.
         """
         print("\nModel initialized.\nRandom walks started.")
         for iteration in range(self.args.walk_number):
             print("\nRandom walk round: "+str(iteration+1)+"/"+str(self.args.walk_number)+".\n")
-            for node in tqdm(self.g.nodes()):
+            for node in tqdm(self.graph.nodes()):
                 walk_from_node = self.do_walk(node)
                 self.walks.append(walk_from_node)
 
     def walk_extracts(self, length):
         """
+        Extracted walks with skip equal to the length.
+        :param length: Length of the skip to be used.
+        :return good_walks: The attenuated random walks.
         """
         good_walks = [walk_transformer(walk, length) for walk in self.walks]
         good_walks = [w for walks in good_walks for w in walks]
         return good_walks
 
-    def get_embedding(self,model):
+    def get_embedding(self, model):
         """
+        Extracting the embedding according to node order from the embedding model.
+        :param model: A Word2Vec model after model fitting.
+        :return embedding: A numpy array with the embedding sorted by node IDs.
         """
-        out = []
-        for node in range(0,len(self.g.nodes())):
-            out.append(list(model[str(node)]))
-        return np.array(out)
+        embedding = []
+        for node in range(0,len(self.graph.nodes())):
+            embedding.append(list(model[str(node)]))
+        embedding = np.array(embedding)
+        return embedding
 
 
 
     def create_embedding(self):
         """
+        Creating a multi-scale embedding.
         """
         self.embedding = []
 
@@ -82,8 +98,8 @@ class WalkletMachine:
 
     def save_model(self):
         """
+        Saving the embedding as a csv with sorted IDs.
         """
-
         print("\nModels are integrated to be multi scale.\nSaving to disk.")
         self.column_names = map(lambda x: "x_" + str(x), range(self.embedding.shape[1]))
         self.embedding = pd.DataFrame(self.embedding, columns = self.column_names)
