@@ -18,8 +18,9 @@ package versions used for development are just below.
 ```
 networkx          1.11
 tqdm              4.19.5
-numpy             1.13.3
+numpy             1.14.3
 pandas            0.20.3
+gensim            3.1.0
 
 ```
 
@@ -60,8 +61,8 @@ Creating an embedding of an other dataset the `Facebook Politicians`. Saving the
 python src/main.py --input input/politicians_edges.csv  --output output/politician_embedding.csv
 ```
 
-Creating a clustered embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160.
+Creating an embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160.
 
 ```
-python src/embedding_clustering.py --dimensions 32 --walk-number 20 --walk-length 160 
+python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 
 ```
