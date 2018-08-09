@@ -20,6 +20,7 @@ networkx          1.11
 tqdm              4.19.5
 numpy             1.13.3
 pandas            0.20.3
+
 ```
 
 ### Datasets
@@ -33,20 +34,20 @@ Learning of the embedding is handled by the `src/embedding_clustering.py` script
 #### Input and output options
 
 ```
-  --input STR                   Input graph path.                                 Default is `data/politician_edges.csv`.
-  --embedding-output STR        Embeddings path.                                  Default is `output/embeddings/politician_embedding.csv`.
-  --cluster-mean-output STR     Cluster centers path.                             Default is `output/cluster_means/politician_means.csv`.
-  --dimensions INT                Number of dimensions.                               Default is 16.
-  --random-walk-length INT        Length of random walk per source.                   Default is 80.
-  --num-of-walks INT              Number of random walks per source.                  Default is 5.
-  --window-size INT               Window size for proximity statistic extraction.     Default is 5.
+  --input STR            Input graph path.                                   Default is `input/food_edges.csv`.
+  --output STR           Embeddings path.                                    Default is `output/food_embedding.csv`.
+  --dimensions  INT      Number of dimensions.                               Default is 16.
+  --walk-length INT      Length of random walk per source.                   Default is 80.
+  --walk-number INT      Number of random walks per source.                  Default is 5.
+  --window-size INT      Window size for proximity statistic extraction.     Default is 5.
+  --min-count   INT      Minimal number of appeareances is to be kept.       Default is 1.  
 ```
 
 ### Examples
 
-The following commands learn a graph embedding and cluster center and writes them to disk. The node representations are ordered by the ID.
+The following commands learn a graph embedding and writes these to disk. The node representations are ordered by the ID.
 
-Creating a GEMSEC embedding of the default dataset with the default hyperparameter settings. Saving the embedding, cluster centres and the log file at the default path.
+Creating a Walklet embedding of the default dataset with the default hyperparameter settings. Saving the embedding, cluster centres and the log file at the default path.
 
 ```
 python src/main.py
@@ -58,8 +59,8 @@ Creating an embedding of an other dataset the `Facebook Politicians`. Saving the
 python src/main.py --input input/politicians_edges.csv  --output output/politician_embedding.csv
 ```
 
-Creating a clustered embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160 and 10 cluster centers.
+Creating a clustered embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160.
 
 ```
-python src/embedding_clustering.py --dimensions 32 --num-of-walks 20 --random-walk-length 160 --cluster-number 10
+python src/embedding_clustering.py --dimensions 32 --walk-number 20 --walk-length 160 
 ```
