@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 from gensim.models.word2vec import Word2Vec
-from joblib import Parallel, delayed
 from helper import walk_transformer, create_graph
 
 class WalkletMachine:
