@@ -39,8 +39,9 @@ Learning of the embedding is handled by the `src/embedding_clustering.py` script
   --dimensions  INT      Number of dimensions.                               Default is 16.
   --walk-length INT      Length of random walk per source.                   Default is 80.
   --walk-number INT      Number of random walks per source.                  Default is 5.
-  --window-size INT      Window size for proximity statistic extraction.     Default is 5.
-  --min-count   INT      Minimal number of appeareances is to be kept.       Default is 1.  
+  --window-size INT      Window size for proximity statistic extraction.     Default is 5. 
+  --min-count   INT      Minimal number of appeareances is to be kept.       Default is 1.
+  --workers     INT      Number of cores used for optimization.              Default is 4. 
 ```
 
 ### Examples
