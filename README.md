@@ -5,9 +5,9 @@ Walklets is a multi-scale node embedding algorithm which learns an embedding of 
 </p>
 
 This repository provides an implementation for Walklets as described in the paper:
-> Don't Walk, Skip! Online Learning of Multi-scale Network Embeddings
-> Bryan Perozzi, Vivek Kulkarni, Haochen Chen, Steven Skiena
-> ASONAM, 2017
+> Don't Walk, Skip! Online Learning of Multi-scale Network Embeddings.
+> Bryan Perozzi, Vivek Kulkarni, Haochen Chen, Steven Skiena.
+> ASONAM, 2017.
 > https://arxiv.org/abs/1605.02115
 
 
