@@ -23,7 +23,6 @@ tqdm              4.19.5
 numpy             1.14.3
 pandas            0.20.3
 gensim            3.1.0
-
 ```
 
 ### Datasets
