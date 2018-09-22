@@ -19,7 +19,7 @@ def walk_transformer(walk, length):
     :param length: Skip size.
     """
     transformed_walk = []
-    for step in range(1,length+1):
+    for step in range(0,length+1):
         transformed_walk.append([y for i, y in enumerate(walk[step:]) if i % length ==0])
     return transformed_walk
 
