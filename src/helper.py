@@ -2,27 +2,6 @@ import argparse
 import pandas as pd
 import networkx as nx
 
-def create_graph(file_name):
-    """
-    Reading an edge list csv and returning an Nx graph object.
-    :param file_name: location of the csv file.
-    :return graph: Nx graph object.
-    """
-    edges = pd.read_csv(file_name).values.tolist()
-    graph = nx.from_edgelist(edges)
-    return graph
-
-def walk_transformer(walk, length):
-    """
-    Tranforming a given random walk to have skips.
-    :param walk: Random walk as a list.
-    :param length: Skip size.
-    """
-    transformed_walk = []
-    for step in range(0,length+1):
-        transformed_walk.append([y for i, y in enumerate(walk[step:]) if i % length ==0])
-    return transformed_walk
-
 def parameter_parser():
 
     """
@@ -82,11 +61,32 @@ def parameter_parser():
     parser.add_argument('--P',
                         type = float,
                         default = 1.0,
-	                help = 'Number of cores. Default is 4.')
+	                help = 'Return hyperparameter. Default is 1.0.')
 
     parser.add_argument('--Q',
                         type = float,
                         default = 1.0,
-	                help = 'Minimal appearance feature count. Default is 1.')
+	                help = 'Inout hyperparameter. Default is 1.0.')
     
     return parser.parse_args()
+
+def create_graph(file_name):
+    """
+    Reading an edge list csv and returning an Nx graph object.
+    :param file_name: location of the csv file.
+    :return graph: Nx graph object.
+    """
+    edges = pd.read_csv(file_name).values.tolist()
+    graph = nx.from_edgelist(edges)
+    return graph
+
+def walk_transformer(walk, length):
+    """
+    Tranforming a given random walk to have skips.
+    :param walk: Random walk as a list.
+    :param length: Skip size.
+    """
+    transformed_walk = []
+    for step in range(0,length+1):
+        transformed_walk.append([y for i, y in enumerate(walk[step:]) if i % length ==0])
+    return transformed_walk
