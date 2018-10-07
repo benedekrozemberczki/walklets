@@ -47,7 +47,7 @@ def parameter_parser():
     parser.add_argument('--walk-type',
                         nargs = '?',
                         default = 'second',
-	                help = 'Embeddings path.')
+	                help = 'Random walk order.')
 
     parser.add_argument('--dimensions',
                         type = int,
