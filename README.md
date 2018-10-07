@@ -48,8 +48,9 @@ Learning of the embedding is handled by the `src/embedding_clustering.py` script
   --window-size INT      Window size for proximity statistic extraction.     Default is 5. 
   --min-count   INT      Minimal number of appeareances is to be kept.       Default is 1.
   --workers     INT      Number of cores used for optimization.              Default is 4. 
-  --P   INT      Minimal number of appeareances is to be kept.       Default is 1.
-  --Q     INT      Number of cores used for optimization.              Default is 4.   
+  --walk-type   STR      Order of random walk.                               Default is `first`.
+  --P           FLOAT    Return hyperparameter for second-order walk.        Default is 1.0.
+  --Q           FLOAT    In-out hyperparameter for second-order walk.        Default is 1.0.   
 ```
 
 ### Examples
@@ -72,4 +73,10 @@ Creating an embedding of the default dataset in 32 dimensions, 20 sequences per 
 
 ```
 python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 
+```
+
+Creating an embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160. We use second-order random walk sampling with a custom random walk behviour setting.
+
+```
+python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 --walk-type second --P 4 --Q 0.25
 ```
