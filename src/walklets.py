@@ -1,12 +1,12 @@
-import networkx as nx
 import glob
 import random
 import numpy as np
 import pandas as pd
+import networkx as nx
 from tqdm import tqdm
-from walkers import FirstOrderRandomWalker, SecondOrderRandomWalker
 from gensim.models.word2vec import Word2Vec
 from helper import walk_transformer, create_graph
+from walkers import FirstOrderRandomWalker, SecondOrderRandomWalker
 
 class WalkletMachine:
     """
