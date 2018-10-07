@@ -77,7 +77,7 @@ Creating an embedding of the default dataset in 32 dimensions, 20 sequences per 
 python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 
 ```
 
-Creating an embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160. We use second-order random walk sampling with a custom random walk behviour setting.
+Creating an embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160. We use second-order random walk sampling with a custom random walk behaviour setting.
 
 ```
 python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 --walk-type second --P 4 --Q 0.25
