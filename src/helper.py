@@ -12,7 +12,6 @@ def parameter_parser():
 
     parser = argparse.ArgumentParser(description = "Run Walklet.")
 
-
     parser.add_argument('--input',
                         nargs = '?',
                         default = './input/food_edges.csv',
