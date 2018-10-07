@@ -4,6 +4,7 @@ import random
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+from walkers import FirstOrderRandomWalker, SecondOrderRandomWalker
 from gensim.models.word2vec import Word2Vec
 from helper import walk_transformer, create_graph
 
@@ -19,8 +20,12 @@ class WalkletMachine:
         """
         self.args = args
         self.graph = create_graph(self.args.input)
-        self.walks = []
-        self.do_walks()
+        if self.args.walk_type == "first":
+            self.walker = FirstOrderRandomWalker(self.graph, args)
+        else:
+            self.walker = SecondOrderRandomWalker(self.graph, False, args)
+            self.walker.preprocess_transition_probs()
+        self.walks = self.walker.do_walks()
         self.create_embedding()
         self.save_model()
 

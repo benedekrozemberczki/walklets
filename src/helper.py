@@ -44,6 +44,11 @@ def parameter_parser():
                         default = './output/food_embedding.csv',
 	                help = 'Embeddings path.')
 
+    parser.add_argument('--walk-type',
+                        nargs = '?',
+                        default = 'second',
+	                help = 'Embeddings path.')
+
     parser.add_argument('--dimensions',
                         type = int,
                         default = 16,
@@ -72,6 +77,16 @@ def parameter_parser():
     parser.add_argument('--min-count',
                         type = int,
                         default = 1,
+	                help = 'Minimal appearance feature count. Default is 1.')
+
+    parser.add_argument('--P',
+                        type = float,
+                        default = 1.0,
+	                help = 'Number of cores. Default is 4.')
+
+    parser.add_argument('--Q',
+                        type = float,
+                        default = 1.0,
 	                help = 'Minimal appearance feature count. Default is 1.')
     
     return parser.parse_args()
