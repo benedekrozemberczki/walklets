@@ -30,31 +30,6 @@ class WalkletMachine:
         self.create_embedding()
         self.save_model()
 
-    def do_walk(self, node):
-        """
-        Doing a single truncated random walk from a source node.
-        :param node: Source node of the truncated random walk.
-        :return walk: A single random walk.
-        """
-        walk = [node]
-        for step in range(self.args.walk_length-1):
-            nebs = [node for node in self.graph.neighbors(walk[-1])]
-            if len(nebs)>0:
-                walk = walk + random.sample(nebs,1) 
-        walk = map(lambda x: str(x), walk)
-        return walk
-
-    def do_walks(self):
-        """
-        Doing a fixed number of truncated random walk from every node in the graph.
-        """
-        print("\nModel initialized.\nRandom walks started.")
-        for iteration in range(self.args.walk_number):
-            print("\nRandom walk round: "+str(iteration+1)+"/"+str(self.args.walk_number)+".\n")
-            for node in tqdm(self.graph.nodes()):
-                walk_from_node = self.do_walk(node)
-                self.walks.append(walk_from_node)
-
     def walk_extracts(self, length):
         """
         Extracted walks with skip equal to the length.
@@ -76,8 +51,6 @@ class WalkletMachine:
             embedding.append(list(model[str(node)]))
         embedding = np.array(embedding)
         return embedding
-
-
 
     def create_embedding(self):
         """
@@ -108,5 +81,4 @@ class WalkletMachine:
         print("\nModels are integrated to be multi scale.\nSaving to disk.")
         self.column_names = map(lambda x: "x_" + str(x), range(self.embedding.shape[1]))
         self.embedding = pd.DataFrame(self.embedding, columns = self.column_names)
-        self.embedding.to_csv(self.args.output, index = None)     
-
+        self.embedding.to_csv(self.args.output, index = None)
