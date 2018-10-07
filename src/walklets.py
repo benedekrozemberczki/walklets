@@ -26,6 +26,7 @@ class WalkletMachine:
             self.walker = SecondOrderRandomWalker(self.graph, False, args)
             self.walker.preprocess_transition_probs()
         self.walks = self.walker.do_walks()
+        del self.walker
         self.create_embedding()
         self.save_model()
 
