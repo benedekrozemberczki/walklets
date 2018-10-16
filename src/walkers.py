@@ -4,8 +4,15 @@ import random
 from tqdm import tqdm
 
 class FirstOrderRandomWalker:
-
+    """
+    Class to do fast first-order random walks.
+    """
     def __init__(self, graph, args):
+        """
+        Constructor for FirstOrderRandomWalker.
+        :param graph: Nx graph object.
+        :param args: Arguments object.
+        """
         self.graph = graph
         self.walk_length = args.walk_length
         self.walk_number = args.walk_number
@@ -39,8 +46,16 @@ class FirstOrderRandomWalker:
 
 
 class SecondOrderRandomWalker:
-    
+    """
+    Class to do second-order random walks.
+    """    
     def __init__(self, nx_G, is_directed, args):
+        """
+        Constructor for SecondOrderRandomWalker.
+        :param  nx_G: Nx graph object.
+        :param is_directed: Directed nature of the graph -- True/False.
+        :param args: Arguments object.
+        """
         self.G = nx_G
         self.nodes = nx.nodes(self.G)
         print("Edge weighting.\n")
