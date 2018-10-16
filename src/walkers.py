@@ -1,6 +1,6 @@
-import networkx as nx
-import numpy as np
 import random
+import numpy as np
+import networkx as nx
 from tqdm import tqdm
 
 class FirstOrderRandomWalker:
