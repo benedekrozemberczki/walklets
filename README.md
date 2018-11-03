@@ -38,7 +38,7 @@ Learning of the embedding is handled by the `src/embedding_clustering.py` script
 #### Input and output options
 
 ```
-  --input STR            Input graph path.    Default is `input/food_edges.csv`.
+  --input  STR           Input graph path.    Default is `input/food_edges.csv`.
   --output STR           Embeddings path.     Default is `output/food_embedding.csv`.
 ```
 #### Model options
