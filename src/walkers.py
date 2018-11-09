@@ -29,7 +29,7 @@ class FirstOrderRandomWalker:
             nebs = [node for node in self.graph.neighbors(walk[-1])]
             if len(nebs)>0:
                 walk = walk + random.sample(nebs,1) 
-        walk = map(lambda x: str(x), walk)
+        walk = [str(w) for w in walk]
         return walk
 
     def do_walks(self):
@@ -90,7 +90,7 @@ class SecondOrderRandomWalker:
                     walk.append(next)
             else:
                 break
-        walk = map(lambda x: str(x),walk)
+        walk = [str(w) for w in walk]
         return walk
 
     def do_walks(self):
