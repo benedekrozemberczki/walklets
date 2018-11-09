@@ -17,14 +17,16 @@ This repository provides an implementation for Walklets as described in the pape
 
 ### Requirements
 
-The codebase is implemented in Python 2.7.
-package versions used for development are just below.
+
+The codebase is implemented in Python 3.5.2 | Anaconda 4.2.0 (64-bit). Package versions used for development are just below.
+
 ```
+tqdm              4.28.1
+numpy             1.15.4
+pandas            0.23.4
+texttable         1.5.0
+gensim            3.6.0
 networkx          1.11
-tqdm              4.19.5
-numpy             1.14.3
-pandas            0.20.3
-gensim            3.1.0
 ```
 
 ### Datasets
