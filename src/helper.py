@@ -12,60 +12,60 @@ def parameter_parser():
 
     parser = argparse.ArgumentParser(description = "Run Walklet.")
 
-    parser.add_argument('--input',
-                        nargs = '?',
-                        default = './input/food_edges.csv',
-	                help = 'Input folder with jsons.')
+    parser.add_argument("--input",
+                        nargs = "?",
+                        default = "./input/food_edges.csv",
+	                help = "Input folder with jsons.")
 
-    parser.add_argument('--output',
-                        nargs = '?',
-                        default = './output/food_embedding.csv',
-	                help = 'Embeddings path.')
+    parser.add_argument("--output",
+                        nargs = "?",
+                        default = "./output/food_embedding.csv",
+	                help = "Embeddings path.")
 
-    parser.add_argument('--walk-type',
-                        nargs = '?',
-                        default = 'second',
-	                help = 'Random walk order.')
+    parser.add_argument("--walk-type",
+                        nargs = "?",
+                        default = "second",
+	                help = "Random walk order.")
 
-    parser.add_argument('--dimensions',
+    parser.add_argument("--dimensions",
                         type = int,
                         default = 16,
-	                help = 'Number of dimensions. Default is 16.')
+	                help = "Number of dimensions. Default is 16.")
 
-    parser.add_argument('--walk-number',
+    parser.add_argument("--walk-number",
                         type = int,
                         default = 5,
-	                help = 'Number of walks. Default is 5.')
+	                help = "Number of walks. Default is 5.")
 
-    parser.add_argument('--walk-length',
+    parser.add_argument("--walk-length",
                         type = int,
                         default = 80,
-	                help = 'Walk length. Default is 80.')
+	                help = "Walk length. Default is 80.")
 
-    parser.add_argument('--window-size',
+    parser.add_argument("--window-size",
                         type = int,
                         default = 5,
-	                help = 'Number of embeddings. Default is 5.')
+	                help = "Number of embeddings. Default is 5.")
 
-    parser.add_argument('--workers',
+    parser.add_argument("--workers",
                         type = int,
                         default = 4,
-	                help = 'Number of cores. Default is 4.')
+	                help = "Number of cores. Default is 4.")
 
-    parser.add_argument('--min-count',
+    parser.add_argument("--min-count",
                         type = int,
                         default = 1,
-	                help = 'Minimal appearance feature count. Default is 1.')
+	                help = "Minimal appearance feature count. Default is 1.")
 
-    parser.add_argument('--P',
+    parser.add_argument("--P",
                         type = float,
                         default = 1.0,
-	                help = 'Return hyperparameter. Default is 1.0.')
+	                help = "Return hyperparameter. Default is 1.0.")
 
-    parser.add_argument('--Q',
+    parser.add_argument("--Q",
                         type = float,
                         default = 1.0,
-	                help = 'Inout hyperparameter. Default is 1.0.')
+	                help = "Inout hyperparameter. Default is 1.0.")
     
     return parser.parse_args()
 

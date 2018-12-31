@@ -47,7 +47,7 @@ class WalkletMachine:
         :return embedding: A numpy array with the embedding sorted by node IDs.
         """
         embedding = []
-        for node in range(0,len(self.graph.nodes())):
+        for node in range(len(self.graph.nodes())):
             embedding.append(list(model[str(node)]))
         embedding = np.array(embedding)
         return embedding
@@ -64,11 +64,11 @@ class WalkletMachine:
             clean_documents = self.walk_extracts(index)
             print("Fitting model.")
             model = Word2Vec(clean_documents,
-                            size = self.args.dimensions,
-                            window = 1,
-                            min_count = self.args.min_count,
-                            sg = 1,
-                            workers = self.args.workers)
+                             size = self.args.dimensions,
+                             window = 1,
+                             min_count = self.args.min_count,
+                             sg = 1,
+                             workers = self.args.workers)
 
             new_embedding = self.get_embedding(model)
             self.embedding = self.embedding +[new_embedding]
@@ -79,6 +79,6 @@ class WalkletMachine:
         Saving the embedding as a csv with sorted IDs.
         """
         print("\nModels are integrated to be multi scale.\nSaving to disk.")
-        self.column_names = map(lambda x: "x_" + str(x), range(self.embedding.shape[1]))
+        self.column_names = [ "x_" + str(x) for x in range(self.embedding.shape[1])]
         self.embedding = pd.DataFrame(self.embedding, columns = self.column_names)
         self.embedding.to_csv(self.args.output, index = None)
