@@ -6,7 +6,7 @@ Walklets is a multi-scale node embedding algorithm which learns an embedding of 
 The implementation supports second-order random walk sampling, which was proposed in the original paper but was not implemented in it. The second-order random walks sampling methods were taken from the reference implementation of [Node2vec](https://github.com/aditya-grover/node2vec).
 </p>
 
-<div style="text-align:center"><img src ="walklet.jpeg" ,width=720/></div>
+<div style="text-align:center"><img src ="walklets.png" ,width=720/></div>
 
 This repository provides an implementation for Walklets as described in the paper:
 > Don't Walk, Skip! Online Learning of Multi-scale Network Embeddings.
