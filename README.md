@@ -1,4 +1,6 @@
-Walklets
+Walklets 	<img src="https://img.shields.io/badge/stars-40+-blue.svg"/>
+        <img src="https://img.shields.io/badge/forks-5+-blue.svg"/>
+	<img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
 ============================================
 <p align="justify">
 We present Walklets, a novel approach for learning multiscale representations of vertices in a network. In contrast to previous works, these representations explicitly encode multiscale vertex relationships in a way that is analytically derivable. Walklets generates these multiscale relationships by subsampling short random walks on the vertices of a graph. By `skipping' over steps in each random walk, our method generates a corpus of vertex pairs which are reachable via paths of a fixed length. This corpus can then be used to learn a series of latent representations, each of which captures successively higher order relationships from the adjacency matrix. We demonstrate the efficacy of Walklets's latent representations on several multi-label network classification tasks for social networks such as BlogCatalog, DBLP, Flickr, and YouTube. Our results show that Walklets outperforms new methods based on neural matrix factorization. Specifically, we outperform DeepWalk by up to 10% and LINE by 58% Micro-F1 on challenging multi-label classification tasks. Finally, Walklets is an online algorithm, and can easily scale to graphs with millions of vertices and edges. 
