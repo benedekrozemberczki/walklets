@@ -16,9 +16,9 @@ This repository provides an implementation for Walklets as described in the pape
 > ASONAM, 2017.
 > https://arxiv.org/abs/1605.02115
 
+A C++ implementation of Walklets is available [[here]](https://github.com/cnclabs/smore).
 
 ### Requirements
-
 
 The codebase is implemented in Python 3.5.2 | Anaconda 4.2.0 (64-bit). Package versions used for development are just below.
 
