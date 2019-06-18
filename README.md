@@ -1,4 +1,4 @@
-Walklets 	<img src="https://img.shields.io/badge/stars-40+-blue.svg"/>
+Walklets 	<img src="https://img.shields.io/badge/stars-50+-blue.svg"/>
         <img src="https://img.shields.io/badge/forks-5+-blue.svg"/>
 	<img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
 ============================================
