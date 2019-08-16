@@ -71,7 +71,7 @@ def create_graph(file_name):
     """
     Reading an edge list csv and returning an Nx graph object.
     :param file_name: location of the csv file.
-    :return graph: Nx graph object.
+    :return graph: Networkx graph object.
     """
     edges = pd.read_csv(file_name).values.tolist()
     graph = nx.from_edgelist(edges)
