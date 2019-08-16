@@ -57,7 +57,6 @@ class WalkletMachine:
         Creating a multi-scale embedding.
         """
         self.embedding = []
-
         for index in range(1,self.args.window_size+1):
             print("\nOptimization round: " +str(index)+"/"+str(self.args.window_size)+".")
             print("Creating documents.")
