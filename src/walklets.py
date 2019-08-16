@@ -68,7 +68,6 @@ class WalkletMachine:
                              min_count = self.args.min_count,
                              sg = 1,
                              workers = self.args.workers)
-
             new_embedding = self.get_embedding(model)
             self.embedding = self.embedding +[new_embedding]
         self.embedding = np.concatenate(self.embedding, axis = 1)
