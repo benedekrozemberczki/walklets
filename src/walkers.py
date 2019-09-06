@@ -44,7 +44,6 @@ class FirstOrderRandomWalker:
                 self.walks.append(walk_from_node)
         return self.walks
 
-
 class SecondOrderRandomWalker:
     """
     Class to do second-order random walks.
