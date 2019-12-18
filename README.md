@@ -29,7 +29,7 @@ numpy             1.15.4
 pandas            0.23.4
 texttable         1.5.0
 gensim            3.6.0
-networkx          1.11
+networkx          2.4
 ```
 
 ### Datasets
