@@ -10,6 +10,7 @@ The implementation supports second-order random walk sampling, which was propose
 
 <div style="text-align:center"><img src ="walklets.png" ,width=720/></div>
 
+
 The model is now also available in the package [Karate Club](https://github.com/benedekrozemberczki/karateclub).
 
 This repository provides an implementation for Walklets as described in the paper:
