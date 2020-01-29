@@ -11,13 +11,14 @@ The implementation supports second-order random walk sampling, which was propose
 <div style="text-align:center"><img src ="walklets.png" ,width=720/></div>
 
 
-The model is now also available in the package [Karate Club](https://github.com/benedekrozemberczki/karateclub).
-
 This repository provides an implementation for Walklets as described in the paper:
 > Don't Walk, Skip! Online Learning of Multi-scale Network Embeddings.
 > Bryan Perozzi, Vivek Kulkarni, Haochen Chen, Steven Skiena.
 > ASONAM, 2017.
 > https://arxiv.org/abs/1605.02115
+
+The model is now also available in the package [Karate Club](https://github.com/benedekrozemberczki/karateclub).
+
 
 A C++ implementation of Walklets is available [[here]](https://github.com/cnclabs/smore).
 
