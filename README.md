@@ -69,24 +69,24 @@ The following commands learn a graph embedding and writes these to disk. The nod
 
 Creating a Walklet embedding of the default dataset with the default hyperparameter settings. Saving the embedding, cluster centres and the log file at the default path.
 
-```
-python src/main.py
+```sh
+$ python src/main.py
 ```
 
 Creating an embedding of an other dataset the `Facebook Politicians`. Saving the output and the log in a custom place.
 
-```
-python src/main.py --input input/politicians_edges.csv  --output output/politician_embedding.csv
+```sh
+$ python src/main.py --input input/politicians_edges.csv  --output output/politician_embedding.csv
 ```
 
 Creating an embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160.
 
-```
-python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 
+```sh
+$ python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 
 ```
 
 Creating an embedding of the default dataset in 32 dimensions, 20 sequences per source node with length 160. We use second-order random walk sampling with a custom random walk behaviour setting.
 
-```
-python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 --walk-type second --P 4 --Q 0.25
+```sh
+$ python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 --walk-type second --P 4 --Q 0.25
 ```
