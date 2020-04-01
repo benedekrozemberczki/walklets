@@ -1,7 +1,5 @@
 # Walklets
 
-![GitHub stars](https://img.shields.io/github/stars/benedekrozemberczki/walklets.svg?style=plastic)
-![GitHub forks](https://img.shields.io/github/forks/benedekrozemberczki/walklets.svg?color=blue&style=plastic)
 ![License](https://img.shields.io/github/license/benedekrozemberczki/walklets.svg?color=blue&style=plastic)
 [![Arxiv](https://img.shields.io/badge/ArXiv-1605.02115-orange.svg?color=blue&style=plastic)](https://arxiv.org/abs/1605.02115)
 
