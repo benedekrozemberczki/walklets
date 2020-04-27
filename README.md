@@ -1,7 +1,7 @@
 # Walklets
 
 ![License](https://img.shields.io/github/license/benedekrozemberczki/walklets.svg?color=blue&style=plastic)
-[![Arxiv](https://img.shields.io/badge/ArXiv-1605.02115-orange.svg?color=blue&style=plastic)](https://arxiv.org/abs/1605.02115)
+[![Arxiv](https://img.shields.io/badge/ArXiv-1605.02115-orange.svg?color=blue&style=plastic)](https://arxiv.org/abs/1605.02115) ![Astro](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fastronomer.ullaakut.eu%2Fshields%3Fowner%3Dbenedekrozemberczki%26name%3Dwalklets)
 
 	
 ### Abstract
