@@ -1,6 +1,6 @@
 Walklets
 ===========================
-[![Arxiv](https://img.shields.io/badge/ArXiv-1605.02115-orange.svg?color=blue&style=plastic)](https://arxiv.org/abs/1605.02115)[![codebeat badge](https://codebeat.co/badges/53d0155c-f14a-437e-81b9-94e52442093b)](https://codebeat.co/projects/github-com-benedekrozemberczki-walklets-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/walklets.svg)](https://github.com/benedekrozemberczki/walklets/archive/master.zip)
+[![Arxiv](https://img.shields.io/badge/ArXiv-1605.02115-orange.svg)](https://arxiv.org/abs/1605.02115)[![codebeat badge](https://codebeat.co/badges/53d0155c-f14a-437e-81b9-94e52442093b)](https://codebeat.co/projects/github-com-benedekrozemberczki-walklets-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/walklets.svg)](https://github.com/benedekrozemberczki/walklets/archive/master.zip)
 
 
 	
