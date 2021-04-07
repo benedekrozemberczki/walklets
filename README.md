@@ -13,7 +13,7 @@ The implementation supports second-order random walk sampling, which was propose
 <div style="text-align:center"><img src ="walklets.png" ,width=720/></div>
 
 
-This repository provides an implementation for Walklets as described in the paper:
+This repository provides an implementation of **Walklets** as described in the paper:
 > Don't Walk, Skip! Online Learning of Multi-scale Network Embeddings.
 > Bryan Perozzi, Vivek Kulkarni, Haochen Chen, Steven Skiena.
 > ASONAM, 2017.
