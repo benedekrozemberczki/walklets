@@ -19,6 +19,8 @@ This repository provides an implementation of **Walklets** as described in the p
 > ASONAM, 2017.
 > https://arxiv.org/abs/1605.02115
 
+--------------------------------------------------------------------------------
+
 The model is now also available in the package [Karate Club](https://github.com/benedekrozemberczki/karateclub).
 
 
