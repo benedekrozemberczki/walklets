@@ -100,4 +100,4 @@ $ python src/main.py --dimensions 32 --walk-number 20 --walk-length 160 --walk-t
 
 - [GNU](https://github.com/benedekrozemberczki/Walklets/blob/master/LICENSE)
 
---------------------------------------------------------------------------------
+----------------------------------------------------------------------------
